@@ -1,19 +1,19 @@
-extends StaticBody2D
+extends Area2D
 var dragging = false
+var done = false
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if dragging:
+	if dragging and !done:
 		position.x = get_global_mouse_position().x
-
-func _on_button_button_up():
-	dragging = false
 
 func _on_button_button_down():
 	dragging = true
+	pass # Replace with function body.
+
+func _on_button_button_up():
+	dragging = false
+	pass # Replace with function body.
+
+func _on_area_entered(area):
+	done = true
+	pass # Replace with function body.
