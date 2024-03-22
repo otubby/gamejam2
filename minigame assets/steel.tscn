@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://d4iwg0rnx2woe" path="res://art/steel.png" id="1_dyvds"]
 [ext_resource type="Script" path="res://scripts/steel.gd" id="1_pyre3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8u2dc"]
-size = Vector2(32, 8)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gscmk"]
+size = Vector2(32, 10)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Area2D" type="Area2D"]
 script = ExtResource("1_pyre3")
 
 [node name="Button" type="Button" parent="."]
@@ -19,7 +19,8 @@ offset_bottom = 4.0
 texture = ExtResource("1_dyvds")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_8u2dc")
+shape = SubResource("RectangleShape2D_gscmk")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
