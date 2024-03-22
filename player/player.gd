@@ -18,11 +18,11 @@ func _process(delta):
 	
 func _physics_process(delta):
 	velocity.y += delta * gravity
-	var motion = velocity * delta
 	if Input.is_action_pressed("ui_left"):
 		velocity.x = -WALK_SPEED
 	elif Input.is_action_pressed("ui_right"):
 		velocity.x =  WALK_SPEED
 	else:
 		velocity.x = 0
-	move_and_slide()
+	var motion = velocity * delta
+	move_and_collide(motion)
