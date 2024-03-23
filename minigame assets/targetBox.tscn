@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://cexlearohbcey"]
+
+[ext_resource type="Texture2D" uid="uid://btfch2apv8srs" path="res://art/minigameStuff/target.png" id="1_owhdu"]
+[ext_resource type="Script" path="res://scripts/targetBox.gd" id="2_5lnkf"]
+[ext_resource type="PackedScene" uid="uid://ctdpsfyady32c" path="res://minigame assets/arae.tscn" id="3_vjhnj"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_owhdu")
+script = ExtResource("2_5lnkf")
+verifier = ExtResource("3_vjhnj")

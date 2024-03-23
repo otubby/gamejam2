@@ -7,15 +7,15 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(77, 47)
 scale = Vector2(3.58594, 1.73828)
 texture = ExtResource("1_bn8yo")
 
 [node name="steelbar1" parent="." instance=ExtResource("3_8omrn")]
-position = Vector2(49, 33)
+position = Vector2(-28, -15)
 
 [node name="steelbar2" parent="." instance=ExtResource("3_8omrn")]
-position = Vector2(109, 33)
+position = Vector2(33, -15)
 
 [node name="blowtorch" parent="." instance=ExtResource("3_j2r3l")]
-position = Vector2(77, 53)
+position = Vector2(-0.999999, 9)
+rotation = -0.00915529

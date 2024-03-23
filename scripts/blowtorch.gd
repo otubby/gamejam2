@@ -10,9 +10,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(welding)
 	if dragging:
-		position = get_global_mouse_position()
+		global_position = get_global_mouse_position()
 	if welding:
 		bar.value+=0.3
 	if bar.value >= 100:

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://6op0fgl2wla5"]
+
+[ext_resource type="Texture2D" uid="uid://cp5yoseq1ikfd" path="res://art/minigameStuff/box.png" id="1_uuu1s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhgwo"]
+size = Vector2(32, 32)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uuu1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rhgwo")
