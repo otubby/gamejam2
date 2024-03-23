@@ -24,7 +24,8 @@ func attack():
 				globalVars.playerKill = true
 				#print(globalVars.playerKill)
 			else:
-				globalVars.playerKill = false
+				pass
+				#globalVars.playerKill = false
 				#print(globalVars.playerKill)
 		#print(sprite2d.get_playing_speed())
 	elif not isBatmanMode:
