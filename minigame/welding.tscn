@@ -1,21 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://chipxjjy5h3l8"]
+[gd_scene load_steps=3 format=3 uid="uid://chipxjjy5h3l8"]
 
-[ext_resource type="Texture2D" uid="uid://csf7om65bbnll" path="res://art/minigameStuff/background.png" id="1_bn8yo"]
 [ext_resource type="PackedScene" uid="uid://bo68sai5gv11t" path="res://minigame assets/steel.tscn" id="3_8omrn"]
 [ext_resource type="PackedScene" uid="uid://5qquf2lybr0w" path="res://minigame assets/blowtorch.tscn" id="3_j2r3l"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
-scale = Vector2(3.58594, 1.73828)
-texture = ExtResource("1_bn8yo")
-
 [node name="steelbar1" parent="." instance=ExtResource("3_8omrn")]
-position = Vector2(-28, -15)
+position = Vector2(-62, -42)
 
 [node name="steelbar2" parent="." instance=ExtResource("3_8omrn")]
-position = Vector2(33, -15)
+position = Vector2(66, -41)
 
 [node name="blowtorch" parent="." instance=ExtResource("3_j2r3l")]
-position = Vector2(-0.999999, 9)
+position = Vector2(43, 37)
 rotation = -0.00915529

@@ -3,7 +3,7 @@ var dragging = false
 var welding = false
 var weldingProg = 0
 @export var bar : ProgressBar
-
+@export var animPlayer : AnimationPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,6 +14,9 @@ func _process(delta):
 		global_position = get_global_mouse_position()
 	if welding:
 		bar.value+=0.3
+		animPlayer.play("blowing")
+	else:
+		animPlayer.play("notblowing")
 	if bar.value >= 100:
 		get_parent().quene_free()
 

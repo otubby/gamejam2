@@ -1,16 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://qxdqall65yvi"]
+[gd_scene load_steps=2 format=3 uid="uid://qxdqall65yvi"]
 
 [ext_resource type="PackedScene" uid="uid://chipxjjy5h3l8" path="res://minigame/welding.tscn" id="1_2e1uh"]
-[ext_resource type="PackedScene" uid="uid://br1jgx6j3sb3x" path="res://minigame/screwing.tscn" id="1_xh7vo"]
-[ext_resource type="PackedScene" uid="uid://ce6lksrev0u7q" path="res://minigame/crane-ing.tscn" id="3_b784q"]
 
 [node name="Testing" type="Node2D"]
 
-[node name="StaticBody2D" parent="." instance=ExtResource("1_xh7vo")]
-position = Vector2(168, 35)
-
 [node name="Node2D" parent="." instance=ExtResource("1_2e1uh")]
-position = Vector2(73, 51)
-
-[node name="Node2D2" parent="." instance=ExtResource("3_b784q")]
-position = Vector2(200, 125)
+position = Vector2(152, 74)
