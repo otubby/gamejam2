@@ -17,14 +17,19 @@ func get_input():
 	pass
 
 func attack():
-	sprite2d.play("attack", 0.9)
-	for body in attackArea.get_overlapping_bodies():
-		if body.is_in_group("enemy"):
-			globalVars.playerKill = true
-			#print(globalVars.playerKill)
-		else:
-			globalVars.playerKill = false
-	#print(sprite2d.get_playing_speed())
+	if isBatmanMode:
+		sprite2d.play("attack", 0.9)
+		for body in attackArea.get_overlapping_bodies():
+			if body.is_in_group("enemy"):
+				globalVars.playerKill = true
+				#print(globalVars.playerKill)
+			else:
+				globalVars.playerKill = false
+		#print(sprite2d.get_playing_speed())
+	else:
+		for body in attackArea.get_overlapping_areas():
+			if body.is_in_group("button1"):
+				get_tree().reload_current_scene()
 
 func _process(delta):
 	get_input()
@@ -63,6 +68,8 @@ func _physics_process(delta):
 		velocity.x = 0
 		if not isBatmanMode:
 			sprite2d.play("StandStill_Civ")
+			if Input.is_action_pressed("attack"):
+				attack()
 		elif isBatmanMode:
 			#print(sprite2d.get_playing_speed())
 			if Input.is_action_pressed("attack") and isBatmanMode == true:

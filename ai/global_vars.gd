@@ -7,4 +7,4 @@ func _ready():
 
 func _process(delta):
 	#print(playerKill)
-	pass	
+	pass
