@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cy630rk7gqbu3"]
 
-[ext_resource type="Script" path="res://minigame assets/screw.gd" id="1_c0uhk"]
-[ext_resource type="Texture2D" uid="uid://b4xaaiawo3tnk" path="res://art/minigameStuff/screw.png" id="2_oqc0d"]
+[ext_resource type="Script" path="res://scripts/screw.gd" id="1_gdycs"]
+[ext_resource type="Texture2D" uid="uid://j3n848oqox2y" path="res://art/minigameStuff/screw.png" id="2_oqc0d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aia7a"]
-radius = 4.0
+radius = 8.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6meih"]
 bg_color = Color(0.8, 0, 0.137255, 1)
@@ -28,7 +28,7 @@ corner_radius_top_left = 1
 corner_radius_bottom_left = 1
 
 [node name="StaticBody2D" type="StaticBody2D" node_paths=PackedStringArray("bar", "sprite")]
-script = ExtResource("1_c0uhk")
+script = ExtResource("1_gdycs")
 bar = NodePath("ProgressBar")
 sprite = NodePath("Sprite2D")
 
@@ -40,11 +40,10 @@ shape = SubResource("CircleShape2D_aia7a")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
-metadata/_edit_use_anchors_ = true
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 visible = false

@@ -13,6 +13,7 @@ func _process(delta):
 		print(rotationProg)
 	if rotationProg >= 180:
 		lockedIn = true
+		bar.visible = false
 	bar.value = rotationProg
 
 func _on_button_button_down():
@@ -22,5 +23,5 @@ func _on_button_button_down():
 
 func _on_button_button_up():
 	rotating = false
-	#bar.visible = false
+	bar.visible = false
 	pass # Replace with function body.

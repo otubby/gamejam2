@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csf7om65bbnll"
-path="res://.godot/imported/background.png-e11046110aa41aa36fb1225741a30d7a.ctex"
+uid="uid://cn5cgnlraxce3"
+path="res://.godot/imported/metalsheet.png-6966fc0c2294b158e4ff8379632fecbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/minigameStuff/background.png"
-dest_files=["res://.godot/imported/background.png-e11046110aa41aa36fb1225741a30d7a.ctex"]
+source_file="res://art/minigameStuff/metalsheet.png"
+dest_files=["res://.godot/imported/metalsheet.png-6966fc0c2294b158e4ff8379632fecbe.ctex"]
 
 [params]
 

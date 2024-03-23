@@ -1,10 +1,62 @@
-[gd_scene load_steps=6 format=3 uid="uid://5qquf2lybr0w"]
+[gd_scene load_steps=10 format=3 uid="uid://5qquf2lybr0w"]
 
 [ext_resource type="Script" path="res://scripts/blowtorch.gd" id="1_dp1k5"]
-[ext_resource type="Texture2D" uid="uid://cpsr4rqsknfnx" path="res://art/minigameStuff/blowtorch.png" id="1_y1xci"]
+[ext_resource type="Texture2D" uid="uid://bmhib3e0cj73h" path="res://art/minigameStuff/blowtorch.png" id="1_y1xci"]
+
+[sub_resource type="Animation" id="Animation_ahuun"]
+resource_name = "blowing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_wn1so"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qbqtj"]
+resource_name = "notblowing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gaqkp"]
+_data = {
+"RESET": SubResource("Animation_wn1so"),
+"blowing": SubResource("Animation_ahuun"),
+"notblowing": SubResource("Animation_qbqtj")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3kpf"]
-size = Vector2(27, 26)
+size = Vector2(70, 75)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2intf"]
 bg_color = Color(0.705882, 0, 0.168627, 1)
@@ -27,24 +79,30 @@ border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 1
 corner_radius_bottom_left = 1
 
-[node name="Area2D" type="Area2D" node_paths=PackedStringArray("bar")]
+[node name="Area2D" type="Area2D" node_paths=PackedStringArray("bar", "animPlayer")]
 script = ExtResource("1_dp1k5")
 bar = NodePath("ProgressBar")
+animPlayer = NodePath("Sprite2D/AnimationPlayer")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = -10.0
-offset_top = -11.0
-offset_right = 12.0
-offset_bottom = 12.0
-metadata/_edit_use_anchors_ = true
+offset_left = -69.0
+offset_top = -36.0
+offset_right = -3.0
+offset_bottom = 34.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(4, -2)
 texture = ExtResource("1_y1xci")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_gaqkp")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(-36, -2)
 shape = SubResource("RectangleShape2D_t3kpf")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]

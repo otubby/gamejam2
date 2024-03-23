@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://qxdqall65yvi"]
+[gd_scene load_steps=2 format=3 uid="uid://qxdqall65yvi"]
+
+[ext_resource type="PackedScene" uid="uid://chipxjjy5h3l8" path="res://minigame/welding.tscn" id="1_2e1uh"]
 
 [node name="Testing" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_2e1uh")]
+position = Vector2(152, 74)
