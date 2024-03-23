@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dj5xy42l2jj7k"]
+[gd_scene load_steps=9 format=3 uid="uid://dj5xy42l2jj7k"]
 
 [ext_resource type="Texture2D" uid="uid://k7ok2e6qsniy" path="res://art/icon.svg" id="1_am8it"]
 [ext_resource type="PackedScene" uid="uid://de60cfd1pfp3p" path="res://ai/uselessNPC.tscn" id="2_xrnby"]
@@ -11,6 +11,8 @@ size = Vector2(114, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j8jiq"]
 size = Vector2(538, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i763c"]
 
 [node name="Aitesting" type="Node2D"]
 
@@ -48,3 +50,14 @@ position = Vector2(492, -3)
 [node name="CharacterBody2D4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_4qpyd")]
 position = Vector2(254, 31)
 player = NodePath("../Player")
+
+[node name="Area2D" type="Area2D" parent="." groups=["button1"]]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D" groups=["button1"]]
+position = Vector2(382, 73)
+scale = Vector2(0.171875, 0.125)
+texture = ExtResource("1_am8it")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["button1"]]
+position = Vector2(383, 73)
+shape = SubResource("RectangleShape2D_i763c")
