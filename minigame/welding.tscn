@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://chipxjjy5h3l8"]
 
 [ext_resource type="Texture2D" uid="uid://csf7om65bbnll" path="res://art/background.png" id="1_bn8yo"]
-[ext_resource type="Texture2D" uid="uid://cpsr4rqsknfnx" path="res://art/blowtorch.png" id="2_g1iqp"]
 [ext_resource type="PackedScene" uid="uid://bo68sai5gv11t" path="res://minigame assets/steel.tscn" id="3_8omrn"]
+[ext_resource type="PackedScene" uid="uid://5qquf2lybr0w" path="res://minigame assets/blowtorch.tscn" id="3_j2r3l"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,12 +11,11 @@ position = Vector2(77, 47)
 scale = Vector2(3.58594, 1.73828)
 texture = ExtResource("1_bn8yo")
 
-[node name="Blowtorch" type="Sprite2D" parent="."]
-position = Vector2(82, 55)
-texture = ExtResource("2_g1iqp")
-
 [node name="steelbar1" parent="." instance=ExtResource("3_8omrn")]
-position = Vector2(57, 33)
+position = Vector2(49, 33)
 
 [node name="steelbar2" parent="." instance=ExtResource("3_8omrn")]
-position = Vector2(99, 33)
+position = Vector2(109, 33)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_j2r3l")]
+position = Vector2(77, 53)

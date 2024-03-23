@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://5qquf2lybr0w"]
+
+[ext_resource type="Script" path="res://scripts/blowtorch.gd" id="1_dp1k5"]
+[ext_resource type="Texture2D" uid="uid://cpsr4rqsknfnx" path="res://art/blowtorch.png" id="1_y1xci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3kpf"]
+size = Vector2(27, 26)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_dp1k5")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -10.0
+offset_top = -11.0
+offset_right = 12.0
+offset_bottom = 12.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, -2)
+texture = ExtResource("1_y1xci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_t3kpf")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
