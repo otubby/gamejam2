@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bwujwowstdld3" path="res://art/spritesheet.png" id="2_4ellg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20vnr"]
-size = Vector2(40, 35.875)
+size = Vector2(12, 10)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("sprite2d")]
 script = ExtResource("1_1xb2t")
+sprite2d = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_20vnr")
@@ -15,5 +16,6 @@ shape = SubResource("RectangleShape2D_20vnr")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.3125, 0.273438)
 texture = ExtResource("2_4ellg")
+hframes = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
