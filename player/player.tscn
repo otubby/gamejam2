@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c2axfe8wim74"]
+[gd_scene load_steps=14 format=3 uid="uid://c2axfe8wim74"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_1xb2t"]
 [ext_resource type="Texture2D" uid="uid://dnoqqd60ftjt" path="res://art/sprites/standBat.png" id="2_5bwo5"]
@@ -72,9 +72,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("sprite2d")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xn2x"]
+size = Vector2(10, 5)
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("sprite2d", "attackArea") groups=["player"]]
 script = ExtResource("1_1xb2t")
 sprite2d = NodePath("Sprite2D")
+attackArea = NodePath("Area2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_20vnr")
@@ -86,5 +90,8 @@ animation = &"StandStill_Bat"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(-9, 0)
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5, -0.5)
+shape = SubResource("RectangleShape2D_6xn2x")

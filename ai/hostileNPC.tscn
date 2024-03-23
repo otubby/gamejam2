@@ -1,16 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://db1auwrkmswa2"]
+[gd_scene load_steps=7 format=3 uid="uid://db1auwrkmswa2"]
 
-[ext_resource type="Texture2D" uid="uid://k7ok2e6qsniy" path="res://art/icon.svg" id="1_pcsnh"]
+[ext_resource type="Script" path="res://ai/hostileNPC.gd" id="1_0h1mp"]
+[ext_resource type="Texture2D" uid="uid://cxj7s4i1wkvv4" path="res://art/sprites/IMG_3875.png" id="2_sbmy3"]
+[ext_resource type="Texture2D" uid="uid://hguii60ff3o7" path="res://art/sprites/npc_walk.png" id="3_2e6kp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xuyyc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sbmy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2e6kp")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_knr5m"]
+size = Vector2(6, 12)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ueuq"]
+radius = 4.5
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(164.75, 87.75)
-scale = Vector2(0.152344, 0.152344)
-texture = ExtResource("1_pcsnh")
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "raycast", "vulnerableZone") groups=["enemy"]]
+script = ExtResource("1_0h1mp")
+sprite = NodePath("Sprite2D")
+raycast = NodePath("RayCast2D")
+vulnerableZone = NodePath("Area2D")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.398, 0.398)
+sprite_frames = SubResource("SpriteFrames_xuyyc")
+animation = &"walk"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(165, 87)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_knr5m")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_2ueuq")
