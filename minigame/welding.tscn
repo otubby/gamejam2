@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://chipxjjy5h3l8"]
 
-[ext_resource type="Texture2D" uid="uid://csf7om65bbnll" path="res://art/background.png" id="1_bn8yo"]
+[ext_resource type="Texture2D" uid="uid://csf7om65bbnll" path="res://art/minigameStuff/background.png" id="1_bn8yo"]
 [ext_resource type="PackedScene" uid="uid://bo68sai5gv11t" path="res://minigame assets/steel.tscn" id="3_8omrn"]
 [ext_resource type="PackedScene" uid="uid://5qquf2lybr0w" path="res://minigame assets/blowtorch.tscn" id="3_j2r3l"]
 

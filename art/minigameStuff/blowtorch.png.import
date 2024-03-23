@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpsr4rqsknfnx"
-path="res://.godot/imported/blowtorch.png-731b0597a6bd21bae8d4ad5517d2f104.ctex"
+path="res://.godot/imported/blowtorch.png-1ba1078c119da1ada71f363d2b25047f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/blowtorch.png"
-dest_files=["res://.godot/imported/blowtorch.png-731b0597a6bd21bae8d4ad5517d2f104.ctex"]
+source_file="res://art/minigameStuff/blowtorch.png"
+dest_files=["res://.godot/imported/blowtorch.png-1ba1078c119da1ada71f363d2b25047f.ctex"]
 
 [params]
 

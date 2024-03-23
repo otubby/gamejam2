@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy630rk7gqbu3"]
+
+[ext_resource type="Script" path="res://minigame assets/screw.gd" id="1_c0uhk"]
+[ext_resource type="Texture2D" uid="uid://b4xaaiawo3tnk" path="res://art/minigameStuff/screw.png" id="2_oqc0d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aia7a"]
+radius = 4.0
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(21, 14)
+script = ExtResource("1_c0uhk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oqc0d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_aia7a")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
