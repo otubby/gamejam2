@@ -25,8 +25,9 @@ func attack():
 				#print(globalVars.playerKill)
 			else:
 				globalVars.playerKill = false
+				#print(globalVars.playerKill)
 		#print(sprite2d.get_playing_speed())
-	else:
+	elif not isBatmanMode:
 		for body in attackArea.get_overlapping_areas():
 			if body.is_in_group("button1"):
 				get_tree().reload_current_scene()
@@ -52,6 +53,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("ui_left"):
 		sprite2d.flip_h = false
+		attackArea.position.x = -5
 		velocity.x = -WALK_SPEED
 		if not isBatmanMode:
 			sprite2d.play("Walk_Civ")
@@ -60,6 +62,7 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_right"):
 		velocity.x =  WALK_SPEED
 		sprite2d.flip_h = true
+		attackArea.position.x = 5
 		if not isBatmanMode:
 			sprite2d.play("Walk_Civ")
 		elif isBatmanMode:
@@ -74,6 +77,7 @@ func _physics_process(delta):
 			#print(sprite2d.get_playing_speed())
 			if Input.is_action_pressed("attack") and isBatmanMode == true:
 				attack()
+				#print("test")
 			else:
 				sprite2d.play("StandStill_Bat")
 				globalVars.playerKill = false
