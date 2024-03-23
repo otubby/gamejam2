@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://de60cfd1pfp3p"]
 
-[ext_resource type="Texture2D" uid="uid://k7ok2e6qsniy" path="res://art/icon.svg" id="1_nhdkx"]
 [ext_resource type="Script" path="res://ai/uselessNPC.gd" id="1_od15l"]
+[ext_resource type="Texture2D" uid="uid://cxj7s4i1wkvv4" path="res://art/sprites/IMG_3875.png" id="2_wgwbl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpa7e"]
-size = Vector2(57, 51)
+size = Vector2(6, 11)
 
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "raycast")]
 script = ExtResource("1_od15l")
@@ -12,14 +12,14 @@ sprite = NodePath("Sprite2D")
 raycast = NodePath("RayCast2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.500032, -2.28882e-05)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_qpa7e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.500032, 0)
+position = Vector2(1, 0)
 scale = Vector2(0.398438, 0.34375)
-texture = ExtResource("1_nhdkx")
+texture = ExtResource("2_wgwbl")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0.500032, -2.28882e-05)
-target_position = Vector2(0, 43)
+target_position = Vector2(0.499968, 16)

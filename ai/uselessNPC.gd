@@ -9,6 +9,7 @@ var gravity = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	sprite.flip_h = true
 	pass # Replace with function body.
 
 
@@ -21,8 +22,16 @@ func _process(delta):
 		
 	if is_on_floor() and not raycast.is_colliding():
 		direction *= -1
+		if sprite.flip_h:
+			sprite.flip_h = false
+		elif not sprite.flip_h:
+			sprite.flip_h = true
 		
 	if is_on_wall():
 		direction *= -1
+		if sprite.flip_h:
+			sprite.flip_h = false
+		elif not sprite.flip_h:
+			sprite.flip_h = true
 	
 	raycast.position.x = 4 * direction.x
