@@ -1,10 +1,76 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2axfe8wim74"]
+[gd_scene load_steps=13 format=3 uid="uid://c2axfe8wim74"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_1xb2t"]
-[ext_resource type="Texture2D" uid="uid://bwujwowstdld3" path="res://art/spritesheet.png" id="2_4ellg"]
+[ext_resource type="Texture2D" uid="uid://dnoqqd60ftjt" path="res://art/sprites/standBat.png" id="2_5bwo5"]
+[ext_resource type="Texture2D" uid="uid://c5mkw6vlbxaqx" path="res://art/sprites/standingCiv.png" id="2_u1wwv"]
+[ext_resource type="Texture2D" uid="uid://dwkxuig1egm4k" path="res://art/sprites/batstanding2.png" id="3_ixd33"]
+[ext_resource type="Texture2D" uid="uid://cltwdjht3sx24" path="res://art/sprites/civWalk1.png" id="3_uww6q"]
+[ext_resource type="Texture2D" uid="uid://7gr3sv85ts52" path="res://art/sprites/walkbat1.png" id="4_2qnd2"]
+[ext_resource type="Texture2D" uid="uid://bprmqpd43hcji" path="res://art/sprites/standingciv2.png" id="4_asvwv"]
+[ext_resource type="Texture2D" uid="uid://cig2k7iais6yp" path="res://art/sprites/civWalk2.png" id="4_qrt53"]
+[ext_resource type="Texture2D" uid="uid://31rsae80u5iw" path="res://art/sprites/walkbat2.png" id="5_sm47p"]
+[ext_resource type="Texture2D" uid="uid://mr8vhilb3wtp" path="res://art/sprites/attack.png" id="8_ivqbx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20vnr"]
 size = Vector2(12, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gjh1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5bwo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ixd33")
+}],
+"loop": true,
+"name": &"StandStill_Bat",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u1wwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_asvwv")
+}],
+"loop": true,
+"name": &"StandStill_Civ",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2qnd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sm47p")
+}],
+"loop": true,
+"name": &"Walk_Bat",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uww6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qrt53")
+}],
+"loop": true,
+"name": &"Walk_Civ",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ivqbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5bwo5")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("sprite2d")]
 script = ExtResource("1_1xb2t")
@@ -13,9 +79,12 @@ sprite2d = NodePath("Sprite2D")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_20vnr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3125, 0.273438)
-texture = ExtResource("2_4ellg")
-hframes = 2
+sprite_frames = SubResource("SpriteFrames_gjh1w")
+animation = &"StandStill_Bat"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-9, 0)

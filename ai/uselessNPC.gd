@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var sprite : Sprite2D
+@export var sprite : AnimatedSprite2D
 @export var raycast : RayCast2D
 
 var speed = 400
@@ -17,6 +17,7 @@ func _ready():
 func _process(delta):
 	velocity.x = direction.x * speed * delta
 	move_and_slide()
+	sprite.play("walk")
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
