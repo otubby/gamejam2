@@ -27,9 +27,10 @@ border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 1
 corner_radius_bottom_left = 1
 
-[node name="StaticBody2D" type="StaticBody2D" node_paths=PackedStringArray("bar")]
+[node name="StaticBody2D" type="StaticBody2D" node_paths=PackedStringArray("bar", "sprite")]
 script = ExtResource("1_c0uhk")
 bar = NodePath("ProgressBar")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_oqc0d")
@@ -46,6 +47,7 @@ offset_bottom = 4.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 offset_left = -6.0
 offset_top = 5.0
 offset_right = 7.0
