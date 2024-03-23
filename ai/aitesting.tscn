@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj5xy42l2jj7k"]
+[gd_scene load_steps=5 format=3 uid="uid://dj5xy42l2jj7k"]
 
 [ext_resource type="Texture2D" uid="uid://k7ok2e6qsniy" path="res://art/icon.svg" id="1_am8it"]
 [ext_resource type="PackedScene" uid="uid://de60cfd1pfp3p" path="res://ai/uselessNPC.tscn" id="2_xrnby"]
+[ext_resource type="PackedScene" uid="uid://c2axfe8wim74" path="res://player/player.tscn" id="3_64vwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0k6e"]
 size = Vector2(114, 20)
@@ -21,3 +22,6 @@ position = Vector2(150, 58)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(148, 95)
 shape = SubResource("RectangleShape2D_j0k6e")
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("3_64vwl")]
+position = Vector2(143, 12)
