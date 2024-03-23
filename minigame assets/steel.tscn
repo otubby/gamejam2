@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bo68sai5gv11t"]
 
-[ext_resource type="Texture2D" uid="uid://d4iwg0rnx2woe" path="res://art/steel.png" id="1_dyvds"]
+[ext_resource type="Texture2D" uid="uid://d4iwg0rnx2woe" path="res://art/minigameStuff/steel.png" id="1_dyvds"]
 [ext_resource type="Script" path="res://scripts/steel.gd" id="1_pyre3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gscmk"]

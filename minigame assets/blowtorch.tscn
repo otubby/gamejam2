@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://5qquf2lybr0w"]
 
 [ext_resource type="Script" path="res://scripts/blowtorch.gd" id="1_dp1k5"]
-[ext_resource type="Texture2D" uid="uid://cpsr4rqsknfnx" path="res://art/blowtorch.png" id="1_y1xci"]
+[ext_resource type="Texture2D" uid="uid://cpsr4rqsknfnx" path="res://art/minigameStuff/blowtorch.png" id="1_y1xci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3kpf"]
 size = Vector2(27, 26)
