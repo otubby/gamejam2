@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp5yoseq1ikfd"
-path="res://.godot/imported/box.png-2cb129f15b0ae6836f1bf4b0b8fbe0b9.ctex"
+uid="uid://dx0ph2hb2xeeq"
+path="res://.godot/imported/container.png-5fe517e6eb67096093f505cbc96633ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/minigameStuff/box.png"
-dest_files=["res://.godot/imported/box.png-2cb129f15b0ae6836f1bf4b0b8fbe0b9.ctex"]
+source_file="res://art/minigameStuff/container.png"
+dest_files=["res://.godot/imported/container.png-5fe517e6eb67096093f505cbc96633ea.ctex"]
 
 [params]
 

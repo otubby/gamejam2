@@ -1,20 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://ce6lksrev0u7q"]
+[gd_scene load_steps=5 format=3 uid="uid://ce6lksrev0u7q"]
 
 [ext_resource type="PackedScene" uid="uid://cexlearohbcey" path="res://minigame assets/targetBox.tscn" id="1_ry6wt"]
+[ext_resource type="Texture2D" uid="uid://bkcn1cv8g8ud3" path="res://art/minigameStuff/crane.png" id="3_6cbum"]
 [ext_resource type="PackedScene" uid="uid://6op0fgl2wla5" path="res://minigame assets/craneBox.tscn" id="3_63cuo"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q7yiq"]
-load_path = "res://.godot/imported/background.png-e11046110aa41aa36fb1225741a30d7a.ctex"
+[ext_resource type="PackedScene" uid="uid://ctsk5fxhg7gwy" path="res://minigame assets/cranehook.tscn" id="4_5nyqf"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Sprite2D" parent="." instance=ExtResource("1_ry6wt")]
-
-[node name="Background" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(0, -1)
-scale = Vector2(6.28125, 4.59375)
-texture = SubResource("CompressedTexture2D_q7yiq")
+[node name="targetBox" parent="." instance=ExtResource("1_ry6wt")]
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_63cuo")]
 position = Vector2(82, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-2, -51)
+texture = ExtResource("3_6cbum")
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("4_5nyqf")]
+position = Vector2(-26, -54)
