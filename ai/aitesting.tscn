@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dj5xy42l2jj7k"]
+[gd_scene load_steps=7 format=3 uid="uid://dj5xy42l2jj7k"]
 
 [ext_resource type="Texture2D" uid="uid://k7ok2e6qsniy" path="res://art/icon.svg" id="1_am8it"]
 [ext_resource type="PackedScene" uid="uid://de60cfd1pfp3p" path="res://ai/uselessNPC.tscn" id="2_xrnby"]
 [ext_resource type="PackedScene" uid="uid://c2axfe8wim74" path="res://player/player.tscn" id="3_64vwl"]
+[ext_resource type="Texture2D" uid="uid://dq2wle44oh1p5" path="res://art/batman.png" id="4_da88w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0k6e"]
 size = Vector2(114, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8jiq"]
+size = Vector2(538, 20)
 
 [node name="Aitesting" type="Node2D"]
 
@@ -25,3 +29,17 @@ shape = SubResource("RectangleShape2D_j0k6e")
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("3_64vwl")]
 position = Vector2(143, 12)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(495, 93)
+shape = SubResource("RectangleShape2D_j8jiq")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/CollisionShape2D"]
+position = Vector2(0.499992, -2.14577e-06)
+scale = Vector2(16.8438, 0.625)
+texture = ExtResource("4_da88w")
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("2_xrnby")]
+position = Vector2(492, -3)
