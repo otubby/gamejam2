@@ -10,6 +10,7 @@ size = Vector2(32, 10)
 script = ExtResource("1_pyre3")
 
 [node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
 offset_left = -14.0
 offset_top = -4.0
 offset_right = 13.0
