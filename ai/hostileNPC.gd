@@ -42,5 +42,7 @@ func _process(delta):
 	
 	for body in vulnerableZone.get_overlapping_bodies():
 		if body.is_in_group("player"):
+			#print("test")
 			if globalVars.playerKill:
+				print("test")
 				queue_free()
