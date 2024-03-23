@@ -1,15 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://br1jgx6j3sb3x"]
+[gd_scene load_steps=7 format=3 uid="uid://br1jgx6j3sb3x"]
 
 [ext_resource type="Script" path="res://scripts/screwing.gd" id="1_h35g3"]
 [ext_resource type="PackedScene" uid="uid://cy630rk7gqbu3" path="res://minigame assets/screw.tscn" id="2_1whsn"]
 [ext_resource type="Texture2D" uid="uid://cn5cgnlraxce3" path="res://art/minigameStuff/metalsheet.png" id="3_4l01v"]
+[ext_resource type="Texture2D" uid="uid://bsjh4byno3b08" path="res://art/minigameStuff/COMPLETE.png" id="4_dhmb1"]
+[ext_resource type="AudioStream" uid="uid://bhd18rkvnrkj1" path="res://sounds/607207__fupicat__congrats.wav" id="5_50kg5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kojn"]
 size = Vector2(130, 131)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="StaticBody2D" type="StaticBody2D" node_paths=PackedStringArray("complete", "speaker")]
 script = ExtResource("1_h35g3")
 screw = ExtResource("2_1whsn")
+complete = NodePath("Sprite2D2")
+speaker = NodePath("AudioStreamPlayer2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_4l01v")
@@ -17,3 +21,10 @@ texture = ExtResource("3_4l01v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_4kojn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_dhmb1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_50kg5")
