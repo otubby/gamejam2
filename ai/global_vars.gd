@@ -6,5 +6,5 @@ func _ready():
 	pass
 
 func _process(delta):
-	print(playerKill)
-	
+	#print(playerKill)
+	pass	
