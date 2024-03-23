@@ -11,7 +11,7 @@ func _process(delta):
 	if rotating and !lockedIn:
 		sprite.rotation+=0.0349066
 		rotationProg+=1
-	if rotationProg >= 180:
+	if rotationProg >= 180 and !lockedIn:
 		lockedIn = true
 		bar.visible = false
 		emit_signal("connected")

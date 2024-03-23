@@ -31,4 +31,6 @@ func progress():
 	if progression >= 4:
 		complete.visible = true
 		speaker.play()
+		await get_tree().create_timer(2).timeout
+		get_parent().queue_free()
 		
