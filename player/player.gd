@@ -2,22 +2,28 @@ extends CharacterBody2D
 
 @export var speed = 150
 @export var sprite2d : AnimatedSprite2D
-@export var raycast : RayCast2D
+@export var attackArea : Area2D
+var kill = false
 const gravity = 500.0
 const WALK_SPEED = 150.0
 const JUMP_FORCE = 175.0
 var isBatmanMode = false
+@onready var globalVars = get_node("/root/GlobalVars")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func get_input():
 	pass
 
 func attack():
 	sprite2d.play("attack", 0.9)
-	if raycast.is_colliding():
-		pass
+	for body in attackArea.get_overlapping_bodies():
+		if body.is_in_group("enemy"):
+			globalVars.playerKill = true
+			#print(globalVars.playerKill)
+		else:
+			globalVars.playerKill = false
 	#print(sprite2d.get_playing_speed())
 
 func _process(delta):
@@ -63,6 +69,7 @@ func _physics_process(delta):
 				attack()
 			else:
 				sprite2d.play("StandStill_Bat")
+				globalVars.playerKill = false
 	if Input.is_action_pressed("ui_up") and is_on_floor():
 		velocity.y = -JUMP_FORCE
 	

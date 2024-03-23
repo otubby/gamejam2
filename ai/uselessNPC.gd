@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name NPC
+
 @export var sprite : AnimatedSprite2D
 @export var raycast : RayCast2D
 

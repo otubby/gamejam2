@@ -15,6 +15,10 @@ run/main_scene="res://ai/aitesting.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://art/icon.svg"
 
+[autoload]
+
+GlobalVars="*res://ai/global_vars.gd"
+
 [display]
 
 window/size/viewport_width=320
