@@ -5,11 +5,9 @@ extends StaticBody2D
 func _ready():
 	var sample : StaticBody2D = screw.instantiate()
 	add_child(sample)
-
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
 	pass

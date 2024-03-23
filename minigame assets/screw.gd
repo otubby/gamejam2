@@ -2,6 +2,7 @@ extends StaticBody2D
 var rotationProg = 0
 var rotating = false
 var lockedIn = false
+@export var bar : ProgressBar
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -11,6 +12,7 @@ func _process(delta):
 		print(rotationProg)
 	if rotationProg >= 180:
 		lockedIn = true
+	bar.value = rotationProg
 
 func _on_button_button_down():
 	rotating = true

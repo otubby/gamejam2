@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy630rk7gqbu3"]
+[gd_scene load_steps=6 format=3 uid="uid://cy630rk7gqbu3"]
 
 [ext_resource type="Script" path="res://minigame assets/screw.gd" id="1_c0uhk"]
 [ext_resource type="Texture2D" uid="uid://b4xaaiawo3tnk" path="res://art/minigameStuff/screw.png" id="2_oqc0d"]
@@ -6,9 +6,30 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_aia7a"]
 radius = 4.0
 
-[node name="StaticBody2D" type="StaticBody2D"]
-position = Vector2(21, 14)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6meih"]
+bg_color = Color(0.8, 0, 0.137255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_guxn0"]
+bg_color = Color(0, 0.901961, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 1
+corner_radius_bottom_left = 1
+
+[node name="StaticBody2D" type="StaticBody2D" node_paths=PackedStringArray("bar")]
 script = ExtResource("1_c0uhk")
+bar = NodePath("ProgressBar")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_oqc0d")
@@ -23,6 +44,16 @@ offset_top = -4.0
 offset_right = 4.0
 offset_bottom = 4.0
 metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -6.0
+offset_top = 5.0
+offset_right = 7.0
+offset_bottom = 9.0
+theme_override_styles/background = SubResource("StyleBoxFlat_6meih")
+theme_override_styles/fill = SubResource("StyleBoxFlat_guxn0")
+max_value = 180.0
+show_percentage = false
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

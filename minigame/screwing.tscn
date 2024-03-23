@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cy630rk7gqbu3" path="res://minigame assets/screw.tscn" id="2_1whsn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kojn"]
-size = Vector2(129, 127)
+size = Vector2(33, 34)
 
 [node name="StaticBody2D" type="StaticBody2D"]
-position = Vector2(166, 80)
+position = Vector2(56, 42)
 script = ExtResource("1_h35g3")
 screw = ExtResource("2_1whsn")
 
@@ -16,5 +16,5 @@ screw = ExtResource("2_1whsn")
 texture = ExtResource("1_mptso")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0.5)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_4kojn")
