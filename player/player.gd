@@ -4,9 +4,9 @@ extends CharacterBody2D
 @export var sprite2d : AnimatedSprite2D
 @export var attackArea : Area2D
 var kill = false
-const gravity = 500.0
-const WALK_SPEED = 150.0
-const JUMP_FORCE = 175.0
+const gravity = 100.0
+const WALK_SPEED = 30.0
+const JUMP_FORCE = 25.0
 var isBatmanMode = false
 @onready var globalVars = get_node("/root/GlobalVars")
 # Called when the node enters the scene tree for the first time.

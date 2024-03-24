@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://hguii60ff3o7" path="res://art/sprites/npc_walk.png" id="3_y5dpq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpa7e"]
-size = Vector2(6, 11)
+size = Vector2(4, 9)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jvnhi"]
 animations = [{
@@ -55,12 +55,13 @@ sprite = NodePath("Sprite2D")
 raycast = NodePath("RayCast2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_qpa7e")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(1, 0)
-scale = Vector2(0.398438, 0.34375)
+scale = Vector2(0.313, 0.273)
 sprite_frames = SubResource("SpriteFrames_jvnhi")
 animation = &"walk"
 frame_progress = 0.620404
