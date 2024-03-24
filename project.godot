@@ -21,8 +21,8 @@ GlobalVars="*res://ai/global_vars.gd"
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=160
+window/size/viewport_width=160
+window/size/viewport_height=100
 window/stretch/mode="canvas_items"
 
 [input]
