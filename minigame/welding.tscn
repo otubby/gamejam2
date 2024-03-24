@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://chipxjjy5h3l8"]
+[gd_scene load_steps=5 format=3 uid="uid://chipxjjy5h3l8"]
 
 [ext_resource type="PackedScene" uid="uid://bo68sai5gv11t" path="res://minigame assets/steel.tscn" id="3_8omrn"]
 [ext_resource type="PackedScene" uid="uid://5qquf2lybr0w" path="res://minigame assets/blowtorch.tscn" id="3_j2r3l"]
+[ext_resource type="AudioStream" uid="uid://bhd18rkvnrkj1" path="res://sounds/607207__fupicat__congrats.wav" id="3_n6rfl"]
+[ext_resource type="Texture2D" uid="uid://bsjh4byno3b08" path="res://art/minigameStuff/COMPLETE.png" id="4_gyr3v"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,6 +13,17 @@ position = Vector2(-62, -42)
 [node name="steelbar2" parent="." instance=ExtResource("3_8omrn")]
 position = Vector2(66, -41)
 
-[node name="blowtorch" parent="." instance=ExtResource("3_j2r3l")]
-position = Vector2(43, 37)
+[node name="blowtorch" parent="." node_paths=PackedStringArray("speaker", "complete") instance=ExtResource("3_j2r3l")]
+position = Vector2(0, 40)
 rotation = -0.00915529
+speaker = NodePath("AudioStreamPlayer2D")
+complete = NodePath("../Sprite2D")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="blowtorch"]
+position = Vector2(-42.6595, -37.3921)
+rotation = 0.00915529
+stream = ExtResource("3_n6rfl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_gyr3v")

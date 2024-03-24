@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qimlgrcyf272"
-path="res://.godot/imported/windowbackground.png-2a45ed2f291b767b2d60a0d28327bbfb.ctex"
+uid="uid://cc4d3g8wa8b4e"
+path="res://.godot/imported/borderedbox.png-474fcb41d6a3a7d7cddbb6c2948d6f0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/minigameStuff/windowbackground.png"
-dest_files=["res://.godot/imported/windowbackground.png-2a45ed2f291b767b2d60a0d28327bbfb.ctex"]
+source_file="res://art/minigameStuff/borderedbox.png"
+dest_files=["res://.godot/imported/borderedbox.png-474fcb41d6a3a7d7cddbb6c2948d6f0e.ctex"]
 
 [params]
 

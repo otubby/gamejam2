@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btfch2apv8srs"
-path="res://.godot/imported/target.png-417737f2214ce892ac8ea56ce3726834.ctex"
+uid="uid://bkcn1cv8g8ud3"
+path="res://.godot/imported/crane.png-c525850f65eeca91655d621403f85c80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/minigameStuff/target.png"
-dest_files=["res://.godot/imported/target.png-417737f2214ce892ac8ea56ce3726834.ctex"]
+source_file="res://art/minigameStuff/crane.png"
+dest_files=["res://.godot/imported/crane.png-c525850f65eeca91655d621403f85c80.ctex"]
 
 [params]
 

@@ -1,20 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://ce6lksrev0u7q"]
+[gd_scene load_steps=7 format=3 uid="uid://ce6lksrev0u7q"]
 
 [ext_resource type="PackedScene" uid="uid://cexlearohbcey" path="res://minigame assets/targetBox.tscn" id="1_ry6wt"]
+[ext_resource type="Texture2D" uid="uid://bkcn1cv8g8ud3" path="res://art/minigameStuff/crane.png" id="3_6cbum"]
 [ext_resource type="PackedScene" uid="uid://6op0fgl2wla5" path="res://minigame assets/craneBox.tscn" id="3_63cuo"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q7yiq"]
-load_path = "res://.godot/imported/background.png-e11046110aa41aa36fb1225741a30d7a.ctex"
+[ext_resource type="PackedScene" uid="uid://ctsk5fxhg7gwy" path="res://minigame assets/cranehook.tscn" id="4_5nyqf"]
+[ext_resource type="Texture2D" uid="uid://bsjh4byno3b08" path="res://art/minigameStuff/COMPLETE.png" id="5_5cdqk"]
+[ext_resource type="AudioStream" uid="uid://bhd18rkvnrkj1" path="res://sounds/607207__fupicat__congrats.wav" id="6_f8sku"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Sprite2D" parent="." instance=ExtResource("1_ry6wt")]
+[node name="targetBox" parent="." node_paths=PackedStringArray("speaker", "complete") instance=ExtResource("1_ry6wt")]
+speaker = NodePath("../AudioStreamPlayer2D")
+complete = NodePath("../Sprite2D")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-2, -51)
+texture = ExtResource("3_6cbum")
+
+[node name="Area2D" parent="." instance=ExtResource("3_63cuo")]
+position = Vector2(74, 0)
+
+[node name="Area2D2" parent="." node_paths=PackedStringArray("box") instance=ExtResource("4_5nyqf")]
+position = Vector2(-27, -54)
+box = NodePath("../Area2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0, -1)
-scale = Vector2(6.28125, 4.59375)
-texture = SubResource("CompressedTexture2D_q7yiq")
+position = Vector2(14, -44)
+texture = ExtResource("5_5cdqk")
 
-[node name="StaticBody2D" parent="." instance=ExtResource("3_63cuo")]
-position = Vector2(82, 1)
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_f8sku")

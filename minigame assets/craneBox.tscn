@@ -1,14 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://6op0fgl2wla5"]
+[gd_scene load_steps=4 format=3 uid="uid://6op0fgl2wla5"]
 
-[ext_resource type="Texture2D" uid="uid://cp5yoseq1ikfd" path="res://art/minigameStuff/box.png" id="1_uuu1s"]
+[ext_resource type="Texture2D" uid="uid://dx0ph2hb2xeeq" path="res://art/minigameStuff/container.png" id="1_2n2vc"]
+[ext_resource type="Script" path="res://scripts/craneBox.gd" id="1_vm13n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhgwo"]
-size = Vector2(32, 32)
+size = Vector2(64, 32)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_vm13n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_uuu1s")
+texture = ExtResource("1_2n2vc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rhgwo")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
