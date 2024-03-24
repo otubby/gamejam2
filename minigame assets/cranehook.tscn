@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://ctsk5fxhg7gwy"]
 
-[ext_resource type="Script" path="res://scripts/cranehook.gd" id="1_63ti3"]
 [ext_resource type="Texture2D" uid="uid://bfkomnsk8lt64" path="res://art/minigameStuff/name.png" id="1_rhrs2"]
+[ext_resource type="Script" path="res://scripts/cranehook.gd" id="1_xjpka"]
 [ext_resource type="Texture2D" uid="uid://cha1uvwj145su" path="res://art/minigameStuff/hook.png" id="2_vc5dq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_futx3"]
 size = Vector2(12, 22)
 
-[node name="StaticBody2D" type="StaticBody2D" node_paths=PackedStringArray("rope", "hook", "colliding")]
-script = ExtResource("1_63ti3")
+[node name="Area2D" type="Area2D" node_paths=PackedStringArray("rope", "hook", "colliding")]
+script = ExtResource("1_xjpka")
 rope = NodePath("Sprite2D")
 hook = NodePath("Sprite2D2")
 colliding = NodePath("CollisionShape2D")
