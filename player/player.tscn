@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://mr8vhilb3wtp" path="res://art/sprites/attack.png" id="8_ivqbx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20vnr"]
-size = Vector2(12, 10)
+size = Vector2(6, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gjh1w"]
 animations = [{
@@ -81,14 +81,17 @@ sprite2d = NodePath("Sprite2D")
 attackArea = NodePath("Area2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_20vnr")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 scale = Vector2(0.3125, 0.273438)
 sprite_frames = SubResource("SpriteFrames_gjh1w")
-animation = &"StandStill_Bat"
+animation = &"StandStill_Civ"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
 
 [node name="Area2D" type="Area2D" parent="."]
 
